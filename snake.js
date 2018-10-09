@@ -36,6 +36,8 @@ try {
     coords.push(Math.floor(width / 2));
     coords.push(Math.floor(height / 2));
     var coordiantes = [coords[0]+1, coords[1]];
+    snake.push(coordiantes);
+    var coordiantes = [coords[0]+2, coords[1]];
     snake.push(coords);
     snake.push(coordiantes);
 
@@ -70,7 +72,7 @@ function gameLoop() {
 
     drawSnake();
 
-    setTimeout(gameLoop, 1000 / speed);
+    setTimeout(gameLoop, 1000 / 5);
 }
 
 function quitGame() {
@@ -112,7 +114,6 @@ function spawnDot() {
 
 function updateStats() {
     cursor.goto(1, height).write("Points: " + points.toString());
-    cursor.goto(1, height + 1).write("Speed: " + speed.toString());
 }
 
 function removeSnake() {
